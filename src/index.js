@@ -1,3 +1,4 @@
-import { createReportFarmacon } from "./controllers/jobcontroller";
+import { createReportFarmacon, createReportFemco } from "./controllers/jobcontroller";
 
 createReportFarmacon();
+createReportFemco();
