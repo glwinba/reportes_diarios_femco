@@ -3,6 +3,7 @@ import { dateFormatLetter } from "../helpers/dateHelper";
 import { cabeceras, cellsExcel, styleCabeceras } from "../arreglos/excelArrays";
 import path from "path";
 import { orderArray, orderArrayFemco } from "../helpers/orderData";
+import { notificationMailError } from "./notificationcontroller";
 
 export const createExcelFarmacon = (data) =>
   new Promise((resolve, reject) => {
@@ -37,7 +38,7 @@ export const createExcelFarmacon = (data) =>
 
     wb.write(pathExcel, (error, stats) => {
       if (error) {
-        console.log(`Hubo un error: ${error}`);
+        notificationMailError(`Error en el envio de mail ${error}`);
         reject(error);
       } else {
         resolve([pathExcel, namePath]);
@@ -78,7 +79,7 @@ export const createExcelFemco = (data) =>
 
     wb.write(pathExcel, (error, stats) => {
       if (error) {
-        console.log(`Hubo un error: ${error}`);
+        notificationMailError(`Error en el envio de mail ${error}`);
         reject(error);
       } else {
         resolve([pathExcel, namePath]);

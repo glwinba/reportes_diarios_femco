@@ -13,5 +13,5 @@ export default {
     MAIL_SERVICE: process.env.MAIL_SERVICE,
     MAIL_USER: process.env.MAIL_USER,
     MAIL_PASS: process.env.MAIL_PASS,
-    TIME_EXEC: process.env.TIME_EXEC
+    TIME_EXEC_REPORTS: process.env.TIME_EXEC_REPORTS
 }

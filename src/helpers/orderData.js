@@ -1,11 +1,9 @@
 export function orderArray(historial){
     const historialOrdenado = historial.sort((a, b) => {
-        // Compara por año primero
         if (a['AÑO'] !== b['AÑO']) {
           return a['AÑO'] - b['AÑO'];
         }
       
-        // Compara por mes si los años son iguales
         const meses = [
           'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO',
           'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'
@@ -17,7 +15,6 @@ export function orderArray(historial){
           return mesA - mesB;
         }
       
-        // Si los años y meses son iguales, compara por RFC
         return a.RFC_PROVEEDOR.localeCompare(b.RFC_PROVEEDOR);
       });
 
@@ -26,12 +23,10 @@ export function orderArray(historial){
 
 export function orderArrayFemco(historial){
   const historialOrdenado = historial.sort((a, b) => {
-      // Compara por año primero
       if (a['AÑO'] !== b['AÑO']) {
         return a['AÑO'] - b['AÑO'];
       }
     
-      // Compara por mes si los años son iguales
       const meses = [
         'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO',
         'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'
@@ -43,7 +38,6 @@ export function orderArrayFemco(historial){
         return mesA - mesB;
       }
     
-      // Si los años y meses son iguales, compara por RFC
       a.RFC_PROVEEDOR.localeCompare(b.RFC_PROVEEDOR);
       
       return a.EMPRESA_CONTRATANTE.localeCompare(b.EMPRESA_CONTRATANTE);

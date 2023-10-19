@@ -6,7 +6,9 @@ export async function spExecute() {
       `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '868'`
     );
     return data;
-  } catch (error) {}
+  } catch (error) {
+    notificationMailError(`Error en el envio de mail ${error}`);
+  }
 }
 
 export async function spExecuteFemco() {
@@ -25,19 +27,21 @@ export async function spExecuteFemco() {
       `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '442'`
     );
 
-    data_immex[0].forEach(element => {
+    data_immex[0].forEach((element) => {
       data.push(element);
     });
-    data_i78[0].forEach(element => {
+    data_i78[0].forEach((element) => {
       data.push(element);
     });
-    data_ccoxxo[0].forEach(element => {
+    data_ccoxxo[0].forEach((element) => {
       data.push(element);
     });
-    data_oxxogas[0].forEach(element => {
+    data_oxxogas[0].forEach((element) => {
       data.push(element);
     });
 
     return data;
-  } catch (error) {}
+  } catch (error) {
+    notificationMailError(`Error en el envio de mail ${error}`);
+  }
 }

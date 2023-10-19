@@ -1,4 +1,11 @@
-import { createReportFarmacon, createReportFemco } from "./controllers/jobcontroller";
+import config from "./config";
+import schedule from "node-schedule";
+import {
+  createReportFarmacon,
+  createReportFemco,
+} from "./controllers/jobcontroller";
 
-createReportFarmacon();
-createReportFemco();
+schedule.scheduleJob(config.TIME_EXEC_REPORTS, async function () {
+  await createReportFarmacon();
+  await createReportFemco();
+});

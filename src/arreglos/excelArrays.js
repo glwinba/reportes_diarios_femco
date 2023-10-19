@@ -22,11 +22,10 @@ export const cabeceras = [
   "Contrato",
   "Listado Trabajadores",
   "ODC",
-  // "faltan",
 ];
 
 export const cellsExcel = [
-  { nombre: "AÑO", type: "number" },
+  { nombre: "AÑO_CUMPLIMIENTO", type: "number" },
   { nombre: "MES_CUMPLIMIENTO", type: "string" },
   { nombre: "EMPRESA_CONTRATANTE", type: "string" },
   { nombre: "EMPRESA_CONTRATANTE", type: "string" },
@@ -49,7 +48,6 @@ export const cellsExcel = [
   { nombre: "Contrato", type: "number" },
   { nombre: "Listado de Trabajadores", type: "number" },
   { nombre: "ODC (Orden de Compra)", type: "number" },
-  // { nombre: "faltan", type: "number" },
 ];
 
 export const styleCabeceras = {
