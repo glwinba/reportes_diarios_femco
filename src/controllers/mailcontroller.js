@@ -6,6 +6,7 @@ import { dateFormatLetter } from "../helpers/dateHelper.js";
 import { transporter } from "../configs/mailconfig.js";
 
 const htmlFileFarmacon = `${__dirname}/../templates/farmacon.html`;
+const htmlFileFemco = `${__dirname}/../templates/femco.html`;
 
 export const sendMail = (pathDoc) =>
   new Promise((resolve, reject) => {
@@ -45,7 +46,7 @@ export const sendMail = (pathDoc) =>
   export const sendMailFemco = (pathDoc) =>
   new Promise((resolve, reject) => {
     const dateFileName = dateFormatLetter();
-    const htmlSync = fs.readFileSync(htmlFileFarmacon, { encoding: "utf-8" });
+    const htmlSync = fs.readFileSync(htmlFileFemco, { encoding: "utf-8" });
     const template = handlebars.compile(htmlSync);
     const htmlToSend = template();
 
