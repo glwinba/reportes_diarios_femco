@@ -1,6 +1,6 @@
 import logger from "../configs/logger";
 import { createExcelFarmacon, createExcelFemco } from "./excelcontroller";
-import { removeFilesReports } from "./filecontroller";
+import { fileExist, removeFilesReports } from "./filecontroller";
 import { sendMail, sendMailFemco } from "./mailcontroller";
 import { notificationMailError } from "./notificationcontroller";
 import { spExecute, spExecuteFemco } from "./spcontroller";
@@ -8,6 +8,7 @@ import { spExecute, spExecuteFemco } from "./spcontroller";
 export async function createReportFarmacon() {
   logger.info(`********* El proceso crear Reporte Farmacon comenzo. *******`);
   try {
+    await fileExist();
     const data = await spExecute();
     const path = await createExcelFarmacon(data);
     await sendMail(path);
@@ -21,6 +22,7 @@ export async function createReportFarmacon() {
 export async function createReportFemco() {
   logger.info(`********* El proceso crear Reporte Femco comenzo. *******`);
   try {
+    await fileExist();
     const data = await spExecuteFemco();
     const path = await createExcelFemco(data);
     await sendMailFemco(path);
