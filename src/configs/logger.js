@@ -1,10 +1,13 @@
 import { createLogger, format, transports } from "winston";
+import * as url from "url";
 
 const timeZoned = () => {
   return new Date().toLocaleString("es-MX", {
     timeZone: "America/Mexico_City",
   });
 };
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 export default createLogger({
   format: format.combine(

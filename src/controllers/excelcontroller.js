@@ -1,10 +1,16 @@
 import xl from "excel4node";
-import { dateFormatLetter } from "../helpers/dateHelper";
-import { cabeceras, cellsExcel, styleCabeceras } from "../arreglos/excelArrays";
+import { dateFormatLetter } from "../helpers/dateHelper.js";
+import {
+  cabeceras,
+  cellsExcel,
+  styleCabeceras,
+} from "../arreglos/excelArrays.js";
 import path from "path";
-import { orderArray, orderArrayFemco } from "../helpers/orderData";
-import { notificationMailError } from "./notificationcontroller";
+import { orderArray, orderArrayFemco } from "../helpers/orderData.js";
+import { notificationMailError } from "./notificationcontroller.js";
+import * as url from "url";
 
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 export const createExcelFarmacon = (data) =>
   new Promise((resolve, reject) => {
     let wb = new xl.Workbook();
@@ -38,7 +44,7 @@ export const createExcelFarmacon = (data) =>
 
     wb.write(pathExcel, (error, stats) => {
       if (error) {
-        notificationMailError(`Error en el envio de mail ${error}`);
+        notificationMailError(`Error al crear excel ${error}`);
         reject(error);
       } else {
         resolve([pathExcel, namePath]);
@@ -79,7 +85,7 @@ export const createExcelFemco = (data) =>
 
     wb.write(pathExcel, (error, stats) => {
       if (error) {
-        notificationMailError(`Error en el envio de mail ${error}`);
+        notificationMailError(`Error al crear excel femco ${error}`);
         reject(error);
       } else {
         resolve([pathExcel, namePath]);

@@ -6,3 +6,24 @@
 [20/10/2023, 05:31:46] info: El correo se envio correctamente
 [20/10/2023, 05:31:46] info: Se removieron correctamente todos los archivos generados.
 [20/10/2023, 05:31:46] info: ********* El proceso crear Reporte Femco termino. *******
+[20/10/2023, 17:28:02] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 17:28:02] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 17:29:36] info: ********* El proceso crear Reporte Femco termino. *******
+[20/10/2023, 17:39:00] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 17:39:00] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 17:40:34] info: ********* El proceso crear Reporte Femco termino. *******
+[20/10/2023, 18:02:24] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:02:25] error: Error al crear las carpetas...
+[20/10/2023, 18:03:01] error: Error en el envio de mail ReferenceError: __dirname is not defined
+[20/10/2023, 18:03:09] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:03:11] error: Error al crear las carpetas...
+[20/10/2023, 18:03:27] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:03:27] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 18:03:31] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:03:31] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 18:04:08] error: Error en el envio de mail ReferenceError: __dirname is not defined
+[20/10/2023, 18:05:17] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:05:17] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 18:05:36] info: ********* El proceso crear Reporte Femco comenzo. *******
+[20/10/2023, 18:05:36] info: Las carpetas estan creadas correctamente.
+[20/10/2023, 18:06:29] info: ********* El proceso crear Reporte Femco termino. *******

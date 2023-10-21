@@ -1,9 +1,9 @@
-import logger from "../configs/logger";
-import { createExcelFarmacon, createExcelFemco } from "./excelcontroller";
-import { fileExist, removeFilesReports } from "./filecontroller";
-import { sendMail, sendMailFemco } from "./mailcontroller";
-import { notificationMailError } from "./notificationcontroller";
-import { spExecute, spExecuteFemco } from "./spcontroller";
+import logger from "../configs/logger.js";
+import { createExcelFarmacon, createExcelFemco } from "./excelcontroller.js";
+import { fileExist, removeFilesReports } from "./filecontroller.js";
+import { sendMail, sendMailFemco } from "./mailcontroller.js";
+import { notificationMailError } from "./notificationcontroller.js";
+import { spExecute, spExecuteFemco } from "./spcontroller.js";
 
 export async function createReportFarmacon() {
   logger.info(`********* El proceso crear Reporte Farmacon comenzo. *******`);
@@ -15,7 +15,7 @@ export async function createReportFarmacon() {
     await removeFilesReports(path[0]);
     logger.info(`********* El proceso crear Reporte Farmacon termino. *******`);
   } catch (error) {
-    notificationMailError(`Error en el envio de mail ${error}`);
+    notificationMailError(`Error al ejecutar funcion FARMACON ${error}`);
   }
 }
 
@@ -29,6 +29,6 @@ export async function createReportFemco() {
     await removeFilesReports(path[0]);
     logger.info(`********* El proceso crear Reporte Femco termino. *******`);
   } catch (error) {
-    notificationMailError(`Error en el envio de mail ${error}`);
+    notificationMailError(`Error al ejecutar funcion FEMCO ${error}`);
   }
 }

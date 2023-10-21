@@ -1,7 +1,9 @@
 import fs from "fs";
-import logger from "../configs/logger";
-import { notificationMailError } from "./notificationcontroller";
+import logger from "../configs/logger.js";
+import { notificationMailError } from "./notificationcontroller.js";
+import * as url from "url";
 
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 export const removeFilesReports = async (file) => {
   fs.rm(file, function (err) {
     if (err)
@@ -10,7 +12,7 @@ export const removeFilesReports = async (file) => {
   logger.info(`Se removieron correctamente todos los archivos generados.`);
 };
 
-export function fileExist (){
+export function fileExist() {
   try {
     if (
       fs.existsSync(`${__dirname}/../files`) &&
@@ -30,5 +32,4 @@ export function fileExist (){
   } catch (error) {
     notificationMailError(`Error al crear las carpetas...`);
   }
-
-};
+}
