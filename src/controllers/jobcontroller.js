@@ -11,8 +11,8 @@ export async function createReportFarmacon() {
     await fileExist();
     const data = await spExecute();
     const path = await createExcelFarmacon(data);
-    await sendMail(path);
-    await removeFilesReports(path[0]);
+    // await sendMail(path);
+    // await removeFilesReports(path[0]);
     logger.info(`********* El proceso crear Reporte Farmacon termino. *******`);
   } catch (error) {
     notificationMailError(`Error al ejecutar funcion FARMACON ${error}`);
@@ -25,8 +25,8 @@ export async function createReportFemco() {
     await fileExist();
     const data = await spExecuteFemco();
     const path = await createExcelFemco(data);
-    await sendMailFemco(path);
-    await removeFilesReports(path[0]);
+    // await sendMailFemco(path);
+    // await removeFilesReports(path[0]);
     logger.info(`********* El proceso crear Reporte Femco termino. *******`);
   } catch (error) {
     notificationMailError(`Error al ejecutar funcion FEMCO ${error}`);

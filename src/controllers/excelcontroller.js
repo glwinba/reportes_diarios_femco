@@ -35,9 +35,19 @@ export const createExcelFarmacon = (data) =>
             .number(data_ordenada[a][element.nombre])
             .style(styleCells);
         } else {
-          ws.cell(a + 2, cells + 1)
-            .string(data_ordenada[a][element.nombre])
-            .style(styleCells);
+          if (element.nombre === "EMPRESA_CONTRATANTE") {
+            ws.cell(a + 2, cells + 1)
+              .string("FARMACON")
+              .style(styleCells);
+          } else if (element.nombre === "EMPRESA_CONTRATANTE2") {
+            ws.cell(a + 2, cells + 1)
+              .string("NACIONAL")
+              .style(styleCells);
+          } else {
+            ws.cell(a + 2, cells + 1)
+              .string(data_ordenada[a][element.nombre])
+              .style(styleCells);
+          }
         }
       }
     }
@@ -76,9 +86,67 @@ export const createExcelFemco = (data) =>
             .number(data_ordenada[a][element.nombre])
             .style(styleCells);
         } else {
-          ws.cell(a + 2, cells + 1)
-            .string(data_ordenada[a][element.nombre])
-            .style(styleCells);
+          if (element.nombre === "EMPRESA_CONTRATANTE") {
+            switch (data_ordenada[a][element.nombre]) {
+              case "FARMACON S.A. DE C.V.":
+                ws.cell(a + 2, cells + 1)
+                  .string("FARMACON")
+                  .style(styleCells);
+                break;
+              case "CADENA COMERCIAL OXXO, S.A. DE C.V":
+                ws.cell(a + 2, cells + 1)
+                  .string("OXXO")
+                  .style(styleCells);
+                break;
+              case "IMPULSORA DE MERCADOS DE MEXICO SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("IMMEX")
+                  .style(styleCells);
+                break;
+              case "SERVICIOS GASOLINEROS DE MÉXICO SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("SERVICIOS GASOLINEROS DE MÉXICO SA DE CV")
+                  .style(styleCells);
+                break;
+              case "INMOBILIARIA 78 SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("INMOBILIARIA 78 SA DE CV")
+                  .style(styleCells);
+                break;
+            }
+          } else if (element.nombre === "EMPRESA_CONTRATANTE2") {
+            switch (data_ordenada[a]["EMPRESA_CONTRATANTE"]) {
+              case "FARMACON S.A. DE C.V.":
+                ws.cell(a + 2, cells + 1)
+                  .string("NACIONAL")
+                  .style(styleCells);
+                break;
+              case "CADENA COMERCIAL OXXO, S.A. DE C.V":
+                ws.cell(a + 2, cells + 1)
+                  .string("CADENA COMERCIAL OXXO, S.A. DE C.V")
+                  .style(styleCells);
+                break;
+              case "IMPULSORA DE MERCADOS DE MEXICO SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("NACIONAL")
+                  .style(styleCells);
+                break;
+              case "SERVICIOS GASOLINEROS DE MÉXICO SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("SERVICIOS GASOLINEROS DE MÉXICO SA DE CV")
+                  .style(styleCells);
+                break;
+              case "INMOBILIARIA 78 SA DE CV":
+                ws.cell(a + 2, cells + 1)
+                  .string("INMOBILIARIA 78 SA DE CV")
+                  .style(styleCells);
+                break;
+            }
+          } else {
+            ws.cell(a + 2, cells + 1)
+              .string(data_ordenada[a][element.nombre])
+              .style(styleCells);
+          }
         }
       }
     }

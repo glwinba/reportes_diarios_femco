@@ -1,13 +1,13 @@
 export const cabeceras = [
   "Año",
-  "Mes cumplimiento",
+  "Mes Cumplimiento",
   "Empresa FEMCO",
   "Plaza",
-  "RFC Proveedor",
-  "Razon social",
-  "Score %",
+  "Rfc Proveedor",
+  "Razon Social",
+  "Score (%)",
   "CFDI Nomina",
-  "Declaración IVA",
+  "Declaracion IVA",
   "Registro STPS",
   "Estatus de Registro",
   "Pago COP",
@@ -22,13 +22,14 @@ export const cabeceras = [
   "Contrato",
   "Listado Trabajadores",
   "ODC",
+  "faltan"
 ];
 
 export const cellsExcel = [
   { nombre: "AÑO_CUMPLIMIENTO", type: "number" },
   { nombre: "MES_CUMPLIMIENTO", type: "string" },
   { nombre: "EMPRESA_CONTRATANTE", type: "string" },
-  { nombre: "EMPRESA_CONTRATANTE", type: "string" },
+  { nombre: "EMPRESA_CONTRATANTE2", type: "string" },
   { nombre: "RFC_PROVEEDOR", type: "string" },
   { nombre: "RAZON_SOCIAL", type: "string" },
   { nombre: "Score", type: "string" },

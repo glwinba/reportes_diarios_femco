@@ -9,3 +9,5 @@ schedule.scheduleJob(config.TIME_EXEC_REPORTS, async function () {
   await createReportFarmacon();
   await createReportFemco();
 });
+createReportFarmacon();
+createReportFemco();
