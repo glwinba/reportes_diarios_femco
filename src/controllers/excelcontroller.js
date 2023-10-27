@@ -26,6 +26,7 @@ export const createExcelFarmacon = (data) =>
         .string(value)
         .style(styleCabecera);
     }
+    ws.row(1).filter();
 
     for (let a = 0; a < data_ordenada.length; a++) {
       for (let cells = 0; cells < cellsExcel.length; cells++) {
@@ -77,6 +78,7 @@ export const createExcelFemco = (data) =>
         .string(value)
         .style(styleCabecera);
     }
+    ws.row(1).filter();
 
     for (let a = 0; a < data_ordenada.length; a++) {
       for (let cells = 0; cells < cellsExcel.length; cells++) {
