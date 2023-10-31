@@ -47,3 +47,12 @@ export function orderArrayFemco(historial){
   return historialOrdenado;
 }
 
+export function capitalizarPrimerLetra(texto) {
+  return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+}
+
+export function formatScore(score) {
+  let porcentajeNum = parseFloat(score.replace("%", ""));
+  return Math.round(porcentajeNum);
+}
+

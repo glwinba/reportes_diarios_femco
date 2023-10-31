@@ -6,7 +6,12 @@ import {
   styleCabeceras,
 } from "../arreglos/excelArrays.js";
 import path from "path";
-import { orderArray, orderArrayFemco } from "../helpers/orderData.js";
+import {
+  capitalizarPrimerLetra,
+  formatScore,
+  orderArray,
+  orderArrayFemco,
+} from "../helpers/orderData.js";
 import { notificationMailError } from "./notificationcontroller.js";
 import * as url from "url";
 
@@ -43,6 +48,14 @@ export const createExcelFarmacon = (data) =>
           } else if (element.nombre === "EMPRESA_CONTRATANTE2") {
             ws.cell(a + 2, cells + 1)
               .string("NACIONAL")
+              .style(styleCells);
+          } else if (element.nombre === "MES_CUMPLIMIENTO") {
+            ws.cell(a + 2, cells + 1)
+              .string(capitalizarPrimerLetra(data_ordenada[a][element.nombre]))
+              .style(styleCells);
+          } else if (element.nombre === "Score") {
+            ws.cell(a + 2, cells + 1)
+              .number(formatScore(data_ordenada[a][element.nombre]))
               .style(styleCells);
           } else {
             ws.cell(a + 2, cells + 1)
@@ -144,6 +157,14 @@ export const createExcelFemco = (data) =>
                   .style(styleCells);
                 break;
             }
+          } else if (element.nombre === "MES_CUMPLIMIENTO") {
+            ws.cell(a + 2, cells + 1)
+              .string(capitalizarPrimerLetra(data_ordenada[a][element.nombre]))
+              .style(styleCells);
+          } else if (element.nombre === "Score") {
+            ws.cell(a + 2, cells + 1)
+              .number(formatScore(data_ordenada[a][element.nombre]))
+              .style(styleCells);
           } else {
             ws.cell(a + 2, cells + 1)
               .string(data_ordenada[a][element.nombre])
