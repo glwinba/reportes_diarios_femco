@@ -5,6 +5,7 @@ import logger from "../configs/logger.js";
 import { dateFormatLetter } from "../helpers/dateHelper.js";
 import { transporter } from "../configs/mailconfig.js";
 import * as url from 'url';
+import { notificationMailError } from "./notificationcontroller.js";
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const htmlFileFarmacon = `${__dirname}/../templates/farmacon.html`;
